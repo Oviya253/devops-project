@@ -32,7 +32,7 @@ pipeline {
         
         stage('Push to Prod') {
             when {
-                branch 'master'
+                branch 'dev'
             }
             steps {
                 sh 'echo $DOCKER_HUB_CREDS_PSW | docker login -u $DOCKER_HUB_CREDS_USR --password-stdin'
